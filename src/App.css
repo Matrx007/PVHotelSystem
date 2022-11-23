@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 5em 0 5em;
+}
+
+.logo_text {
+  font-size: 20px;
+}
+
+.navbar_links {
+  display: flex;
+}
+
+.text_1 {
+  padding: 0 1em;
+}
+
+.navbar_link {
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+/* First page links */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.text_2 {
+  padding: 1em 0em;
+  font-size: 18px;
+}
+
+.rooms {
+  text-align: center;
+}
+
+.room_link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 35px;
+}
