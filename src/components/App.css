@@ -17,6 +17,8 @@
 
 .logo_text {
   font-size: 20px;
+  text-decoration: none;
+  color: black;
 }
 
 .navbar_links {
@@ -31,6 +33,7 @@
   font-size: 15px;
   text-decoration: none;
   color: black;
+  margin-left: 0.5em;
 }
 
 /* First page links */
@@ -56,4 +59,29 @@
   color: black;
   font-weight: bold;
   font-size: 35px;
+}
+
+/* Sign-up and sign-in */
+
+h1 {
+  padding: 1.5em 0 0 2.5em;
+}
+
+form {
+  padding-left: 10em;
+  padding-top: 5em;
+}
+
+.inputs {
+  display: flex;
+  gap: 50px;
+}
+
+input {
+  margin-top: 1em;
+  outline: none;
+}
+
+.password {
+  margin-top: 2em;
 }
