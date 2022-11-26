@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar4 from "./Navbars/Navbar4";
+import OtherPagesNavbar from "./Navbars/OtherPagesNavbar";
 
 function BookRooms() {
   return (
     <div>
-      <Navbar4 />
+      <OtherPagesNavbar />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar2() {
+function LogInNavbar() {
   return (
     <header className="navbar">
       <div className="logo">
@@ -10,13 +10,13 @@ function Navbar2() {
         </Link>
       </div>
       <div className="navbar_links">
-        <p>Konto juba olemas?</p>
-        <Link to="/enter" className="navbar_link">
-          Sisene
+        <p>Pole veel kontot?</p>
+        <Link to="/register" className="navbar_link">
+          Registreeru
         </Link>
       </div>
     </header>
   );
 }
 
-export default Navbar2;
+export default LogInNavbar;

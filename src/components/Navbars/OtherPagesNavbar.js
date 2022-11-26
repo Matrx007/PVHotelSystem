@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar4() {
+function OtherPagesNavbar() {
   return (
     <header className="navbar">
       <div className="logo">
@@ -13,4 +13,4 @@ function Navbar4() {
   );
 }
 
-export default Navbar4;
+export default OtherPagesNavbar;

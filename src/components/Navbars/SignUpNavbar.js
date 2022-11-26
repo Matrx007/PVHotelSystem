@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar3() {
+function SignUpNavbar() {
   return (
     <header className="navbar">
       <div className="logo">
@@ -10,13 +10,13 @@ function Navbar3() {
         </Link>
       </div>
       <div className="navbar_links">
-        <p>Pole veel kontot?</p>
-        <Link to="/register" className="navbar_link">
-          Registreeru
+        <p>Konto juba olemas?</p>
+        <Link to="/enter" className="navbar_link">
+          Sisene
         </Link>
       </div>
     </header>
   );
 }
 
-export default Navbar3;
+export default SignUpNavbar;

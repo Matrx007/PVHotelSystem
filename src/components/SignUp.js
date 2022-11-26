@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar2 from "./Navbars/Navbar2";
+import SignUpNavbar from "./Navbars/SignUpNavbar";
 
 function SignUp() {
   return (
     <div>
-      <Navbar2 />
+      <SignUpNavbar />
       <h1>Registreeru</h1>
       <form action="#">
         <div className="inputs">
@@ -29,6 +29,9 @@ function SignUp() {
             </div>
           </label>
         </div>
+        <button className="btn" type="submit">
+          Registreeru
+        </button>
       </form>
     </div>
   );

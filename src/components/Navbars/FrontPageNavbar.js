@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function FrontPageNavbar() {
   return (
     <div>
       <header className="navbar">
@@ -14,7 +14,7 @@ function Navbar() {
           <Link to="/register" className="navbar_link">
             Registreeru
           </Link>
-          <p className="text_1 navbar_link">või</p>
+          <p className="text_1">või</p>
           <Link to="/enter" className="navbar_link">
             Sisene
           </Link>
@@ -24,4 +24,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default FrontPageNavbar;
