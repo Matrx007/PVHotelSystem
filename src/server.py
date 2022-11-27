@@ -41,9 +41,9 @@ def get_rooms_sorted():
     return SHUFFLED_ROOMS
 
 @app.route('/api/rooms-available')
-def get_rooms_sorted():
-    print("column:", request.args.get('column') or 'price')
-    print("isAscending:", request.args.get('isAscending') == 'true' or False)
+def get_rooms_available():
+    print("startDate:", request.args.get('startDate'))
+    print("endDate:", request.args.get('endDate'))
 
     SHUFFLED_ROOMS = ROOMS.copy()
     random.shuffle(SHUFFLED_ROOMS)
