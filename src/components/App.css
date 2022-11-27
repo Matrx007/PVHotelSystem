@@ -38,10 +38,10 @@
 }
 
 .navbar_link:hover,
-.logo_text:hover {
+.logo_text:hover,
+.room:hover {
   color: rgb(0, 102, 255);
   font-weight: bold;
-  transition: 0.2s ease;
 }
 
 /* First page links */
@@ -96,7 +96,7 @@ input {
 
 .btn {
   margin-top: 5em;
-  padding: 1em;
+  padding: 1em 2em;
   border: none;
   font-size: 17px;
   background-color: white;
@@ -113,4 +113,49 @@ input {
 
 .btn_2 {
   padding: 1em 2em 1em 2em;
+}
+
+.register {
+  padding: 1em;
+}
+
+/* Book rooms */
+
+.room_types {
+  margin: 4em 0 0 7em;
+}
+
+.heading {
+  margin-bottom: 2em;
+}
+
+.room {
+  margin-bottom: 1em;
+  background-color: white;
+  border: none;
+  font-size: 16px;
+}
+
+/* Search rooms */
+
+img {
+  width: 400px;
+  padding: 3em 0 0 5em;
+}
+
+.room_card {
+  display: flex;
+  gap: 50px;
+}
+
+.room_description {
+  margin-top: 3em;
+}
+
+.available {
+  margin-top: 1em;
+}
+
+.price {
+  margin-top: 6em;
 }

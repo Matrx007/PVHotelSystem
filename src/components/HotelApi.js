@@ -191,4 +191,4 @@ async function getRoomsByAvailability(startDate, endDate) {
   ];
 }
 
-// console.log(getRooms());
+export { getRooms };

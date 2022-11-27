@@ -29,7 +29,7 @@ function SignUp() {
             </div>
           </label>
         </div>
-        <button className="btn" type="submit">
+        <button className="btn register" type="submit">
           Registreeru
         </button>
       </form>
