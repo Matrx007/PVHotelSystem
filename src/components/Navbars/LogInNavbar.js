@@ -11,7 +11,7 @@ function LogInNavbar() {
       </div>
       <div className="navbar_links">
         <p>Pole veel kontot?</p>
-        <Link to="/register" className="navbar_link">
+        <Link to="/register" className="navbar_link sign_in_link">
           Registreeru
         </Link>
       </div>

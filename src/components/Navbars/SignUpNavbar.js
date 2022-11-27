@@ -11,7 +11,7 @@ function SignUpNavbar() {
       </div>
       <div className="navbar_links">
         <p>Konto juba olemas?</p>
-        <Link to="/enter" className="navbar_link">
+        <Link to="/enter" className="navbar_link sign_in_link">
           Sisene
         </Link>
       </div>

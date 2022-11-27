@@ -12,7 +12,9 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 2em 5em 0 5em;
+  align-items: center;
+  padding: 1.5em 5em 1.5em 5em;
+  background-color: rgb(112, 210, 223);
 }
 
 .logo_text {
@@ -27,20 +29,25 @@
 
 .text_1 {
   padding: 0 1em;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .navbar_link {
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;
   color: black;
+}
+
+.sign_in_link {
   margin-left: 0.5em;
 }
 
 .navbar_link:hover,
-.logo_text:hover,
+.logo_text:hover {
+  color: rgb(255, 255, 255);
+}
+
 .room:hover {
-  color: rgb(0, 102, 255);
   font-weight: bold;
 }
 
