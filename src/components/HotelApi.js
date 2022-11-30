@@ -191,4 +191,4 @@ async function getRoomsByAvailability(startDate, endDate) {
   ];
 }
 
-export { getRooms };
+export { getRooms, getRoomsSortedBy };

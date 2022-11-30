@@ -166,3 +166,41 @@ img {
 .price {
   margin-top: 6em;
 }
+
+.search_elements {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+select,
+.search {
+  padding: 0.9em;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+select {
+  margin-top: 1.5em;
+  outline: none;
+  background-color: white;
+  color: black;
+}
+
+#space {
+  margin-left: 2em;
+}
+
+.search {
+  margin-right: 10em;
+  margin-left: 2em;
+  border: none;
+  background-color: rgb(113, 58, 241);
+  color: white;
+}
+
+.search:hover {
+  background-color: rgb(71, 16, 199);
+  transition: 0.5s ease;
+}
