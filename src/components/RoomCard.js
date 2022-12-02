@@ -1,13 +1,13 @@
 import React from "react";
 
-function RoomCard({ pictures, name, available, price }) {
+function RoomCard({ room }) {
   return (
     <div className="room_card">
-      <img src={pictures} alt="" />
+      <img src={room.pictures} alt="" />
       <div className="room_description">
-        <h3>{name}</h3>
-        <p className="available">{available} saadaval</p>
-        <h3 className="price">{price} € / öö</h3>
+        <h3>{room.name}</h3>
+        <p className="available">{room.available} saadaval</p>
+        <h3 className="price">{room.price} € / öö</h3>
       </div>
     </div>
   );

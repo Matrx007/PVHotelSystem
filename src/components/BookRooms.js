@@ -19,7 +19,7 @@ function BookRooms() {
           <h3>Toa tüübid</h3>
         </div>
         {rooms.map((room) => {
-          return <RoomTypes room={room.name} />;
+          return <RoomTypes key={room.id} room={room.name} />;
         })}
         <button className="btn">Edasi</button>
       </div>

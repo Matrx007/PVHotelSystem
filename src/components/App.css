@@ -190,17 +190,5 @@ select {
 
 #space {
   margin-left: 2em;
-}
-
-.search {
   margin-right: 10em;
-  margin-left: 2em;
-  border: none;
-  background-color: rgb(113, 58, 241);
-  color: white;
-}
-
-.search:hover {
-  background-color: rgb(71, 16, 199);
-  transition: 0.5s ease;
 }
