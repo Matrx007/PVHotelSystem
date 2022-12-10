@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import OtherPagesNavbar from "./Navbars/OtherPagesNavbar";
 import { getRooms } from "./HotelApi";
 import RoomTypes from "./RoomTypes";
@@ -21,7 +22,11 @@ function BookRooms() {
         {rooms.map((room) => {
           return <RoomTypes key={room.id} room={room.name} />;
         })}
-        <button className="btn">Edasi</button>
+        <div className="btn_container">
+          <Link to="/book-rooms-schedule" className="btn">
+            Edasi
+          </Link>
+        </div>
       </div>
     </div>
   );

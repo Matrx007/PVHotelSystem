@@ -106,16 +106,22 @@ input {
   padding: 1em 2em;
   border: none;
   font-size: 17px;
+  color: black;
   background-color: white;
   border: 2px solid rgb(14, 82, 183);
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn:hover {
   background-color: rgb(14, 82, 183);
   color: white;
   transition: 0.5s ease;
+}
+
+.btn_container {
+  margin-top: 5em;
 }
 
 .btn_2 {
@@ -182,13 +188,46 @@ select,
 }
 
 select {
-  margin-top: 1.5em;
+  margin-top: 2em;
   outline: none;
-  background-color: white;
-  color: black;
+  background-color: rgb(220, 130, 0);
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding: 1em;
+}
+
+option {
+  background-color: rgb(59, 59, 59);
 }
 
 #space {
   margin-left: 2em;
   margin-right: 10em;
+}
+
+.room_type_links {
+  display: flex;
+}
+
+.link_1 {
+  margin-left: 3em;
+  text-decoration: none;
+  color: black;
+}
+
+.link_2 {
+  margin-left: 1em;
+}
+
+.link_1,
+.link_2 {
+  font-size: 14px;
+  margin-top: 0.2em;
+  cursor: pointer;
+}
+
+.link_1:hover,
+.link_2:hover {
+  color: red;
 }

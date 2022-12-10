@@ -6,6 +6,8 @@ import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import BookRooms from "./BookRooms";
 import SearchRooms from "./SearchRooms";
+import RoomOverview from "./RoomOverview";
+import BookRoomsSchedule from "./BookRoomsSchedule";
 
 function App() {
   return (
@@ -18,6 +20,11 @@ function App() {
         <Route path="/enter" element={<LogIn />}></Route>
         <Route path="/book-rooms" element={<BookRooms />}></Route>
         <Route path="/search-rooms" element={<SearchRooms />}></Route>
+        <Route path="/room-overview" element={<RoomOverview />}></Route>
+        <Route
+          path="/book-rooms-schedule"
+          element={<BookRoomsSchedule />}
+        ></Route>
       </Routes>
     </div>
   );
