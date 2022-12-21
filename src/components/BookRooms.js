@@ -20,7 +20,11 @@ function BookRooms() {
           <h3>Toa tüübid</h3>
         </div>
         {rooms.map((room) => {
-          return <RoomTypes key={room.id} room={room.name} />;
+          return (
+            <div key={room.id}>
+              <RoomTypes room={room} />
+            </div>
+          );
         })}
         <div className="btn_container">
           <Link to="/book-rooms-schedule" className="btn">

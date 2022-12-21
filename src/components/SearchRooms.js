@@ -34,7 +34,11 @@ function SearchRooms() {
         </div>
       </div>
       {rooms.map((room) => {
-        return <RoomCard key={room.id} room={room} />;
+        return (
+          <div key={room.id}>
+            <RoomCard room={room} />
+          </div>
+        );
       })}
     </div>
   );

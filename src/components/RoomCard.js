@@ -8,7 +8,7 @@ function RoomCard({ room }) {
       <div className="room_description">
         <div className="room_type_links">
           <h3>{room.name}</h3>
-          <Link to="/room-overview" className="link_1">
+          <Link to={`/room-overview/${room.id}`} className="link_1">
             Ülevaade
           </Link>
           <Link to="/book-rooms-schedule" className="link_1 link_2">

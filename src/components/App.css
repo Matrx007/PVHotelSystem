@@ -231,3 +231,17 @@ option {
 .link_2:hover {
   color: red;
 }
+
+/* Room Overview */
+
+.price_1 {
+  margin-bottom: 3em;
+}
+
+.btn_1 {
+  padding: 1em;
+}
+
+.img {
+  width: 550px;
+}
