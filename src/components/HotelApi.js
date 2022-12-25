@@ -1,3 +1,55 @@
+function randomDate(date1, date2) {
+  function randomValueBetween(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  date1 = date1 || "01-01-1970";
+  date2 = date2 || new Date().toLocaleDateString();
+  date1 = new Date(date1).getTime();
+  date2 = new Date(date2).getTime();
+
+  if (date1 > date2) {
+    return new Date(randomValueBetween(date2, date1)).toLocaleDateString();
+  } else {
+    return new Date(randomValueBetween(date1, date2)).toLocaleDateString();
+  }
+}
+
+function uniq(a) {
+  var seen = {};
+  return a.filter(function (item) {
+    return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+  });
+}
+
+/**
+ * @returns {Date[]}
+ */
+function generateRandomDates() {
+  let dates = [];
+
+  let currentDate = new Date(),
+    y = currentDate.getFullYear(),
+    m = currentDate.getMonth();
+  let firstDayInMonth = new Date(y, m, 1);
+  let lastDayInMonth = new Date(y, m + 1, 0);
+
+  for (let i = 0; i < 10; i++)
+    dates.push(randomDate(firstDayInMonth, lastDayInMonth));
+
+  return uniq(dates);
+}
+
+function generateRandomDatesExcluding(
+  excludeRangeStartDate,
+  excludeRangeEndDate
+) {
+  return generateRandomDates().filter((date) => {
+    let newDate = new Date(date);
+    return newDate < excludeRangeStartDate || newDate > excludeRangeEndDate;
+  });
+}
+
 /***
  * @typedef {Object} Room
  * @property {String} name Type of room
@@ -20,6 +72,7 @@ async function getRooms() {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5a476c74.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/9c4ce050.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       name: "Kahekohaline",
@@ -30,6 +83,7 @@ async function getRooms() {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/bf3c0cbc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/79035584.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       name: "Kahe voodiga",
@@ -40,6 +94,7 @@ async function getRooms() {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/917201ab.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/c43c9335.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       name: "Kolmekohaline",
@@ -50,6 +105,7 @@ async function getRooms() {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/42361b97.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/11995beb.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       name: "Sviit",
@@ -61,6 +117,7 @@ async function getRooms() {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5dfe5424.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/f5bad581.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
   ];
 }
@@ -82,6 +139,7 @@ async function getRoomsSortedBy(column, isAscending) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5a476c74.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/9c4ce050.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       id: "2",
@@ -93,6 +151,7 @@ async function getRoomsSortedBy(column, isAscending) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/bf3c0cbc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/79035584.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       id: "3",
@@ -104,6 +163,7 @@ async function getRoomsSortedBy(column, isAscending) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/917201ab.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/c43c9335.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       id: "4",
@@ -115,6 +175,7 @@ async function getRoomsSortedBy(column, isAscending) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/42361b97.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/11995beb.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
     {
       id: "5",
@@ -127,6 +188,7 @@ async function getRoomsSortedBy(column, isAscending) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5dfe5424.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/f5bad581.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDates(),
     },
   ].sort((roomA, roomB) => {
     if (roomA[column] < roomB[column]) return isAscending ? -1 : 1;
@@ -151,6 +213,7 @@ async function getRoomsByAvailability(startDate, endDate) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5a476c74.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/9c4ce050.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDatesExcluding(startDate, endDate),
     },
     {
       name: "Kahekohaline",
@@ -161,6 +224,7 @@ async function getRoomsByAvailability(startDate, endDate) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/bf3c0cbc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/79035584.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDatesExcluding(startDate, endDate),
     },
     {
       name: "Kahe voodiga",
@@ -171,6 +235,7 @@ async function getRoomsByAvailability(startDate, endDate) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/917201ab.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/c43c9335.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDatesExcluding(startDate, endDate),
     },
     {
       name: "Kolmekohaline",
@@ -181,6 +246,7 @@ async function getRoomsByAvailability(startDate, endDate) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/42361b97.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/11995beb.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDatesExcluding(startDate, endDate),
     },
     {
       name: "Sviit",
@@ -192,6 +258,7 @@ async function getRoomsByAvailability(startDate, endDate) {
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5dfe5424.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
         "https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/f5bad581.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium",
       ],
+      bookedDates: generateRandomDatesExcluding(startDate, endDate),
     },
   ];
 }

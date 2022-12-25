@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import OtherPagesNavbar from "./Navbars/OtherPagesNavbar";
 import { getRooms } from "./HotelApi";
-import RoomTypes from "./RoomTypes";
+import { Link } from "react-router-dom";
 
 function BookRooms() {
   const [rooms, setRooms] = useState([]);
+  const [roomValue, setRoomValue] = useState("");
 
   useEffect(() => {
     getRooms().then((data) => setRooms(data));
   }, []);
+
+  const handleClick = (e) => {
+    setRoomValue(e.target.value);
+  };
 
   return (
     <div>
@@ -22,12 +26,14 @@ function BookRooms() {
         {rooms.map((room) => {
           return (
             <div key={room.id}>
-              <RoomTypes room={room} />
+              <button className="room" value={room.name} onClick={handleClick}>
+                {room.name}
+              </button>
             </div>
           );
         })}
         <div className="btn_container">
-          <Link to="/book-rooms-schedule" className="btn">
+          <Link to={`/book-rooms-schedule/${roomValue}`} className="btn">
             Edasi
           </Link>
         </div>

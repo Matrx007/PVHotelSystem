@@ -5,7 +5,7 @@ import RoomCard from "./RoomCard";
 
 function SearchRooms() {
   const [rooms, setRooms] = useState([]);
-  const [sortDirection, setSortDirection] = useState(false);
+  const [sortDirection, setSortDirection] = useState(true);
   const [sortType, setSortType] = useState("name");
 
   useEffect(() => {

@@ -132,7 +132,7 @@ input {
   padding: 1em;
 }
 
-/* Book rooms */
+/* Book rooms 1 */
 
 .room_types {
   margin: 4em 0 0 7em;
@@ -147,11 +147,12 @@ input {
   background-color: white;
   border: none;
   font-size: 16px;
+  cursor: pointer;
 }
 
 /* Search rooms */
 
-img {
+.img {
   width: 400px;
   padding: 3em 0 0 5em;
 }
@@ -242,6 +243,33 @@ option {
   padding: 1em;
 }
 
-.img {
+.img_1 {
+  height: 350px;
   width: 550px;
+}
+
+.calendar_container {
+  margin-top: 4em;
+}
+
+.highlight {
+  color: rgb(32, 163, 32);
+}
+
+/* Book rooms 2*/
+
+.calendar_container_1 {
+  margin: 5em 0 0 8em;
+}
+
+.calendar {
+  margin: 2em 0 4em 0;
+}
+
+.room_type {
+  margin-bottom: 0.5em;
+}
+
+.time {
+  margin-top: 1.5em;
 }
