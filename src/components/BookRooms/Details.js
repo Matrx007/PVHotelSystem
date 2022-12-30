@@ -1,4 +1,4 @@
-import OtherPagesNavbar from "./Navbars/OtherPagesNavbar";
+import OtherPagesNavbar from "../Navbars/OtherPagesNavbar";
 
 function Details() {
   const searchParams = new URLSearchParams(document.location.search);

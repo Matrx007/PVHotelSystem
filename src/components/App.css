@@ -252,18 +252,10 @@ option {
   margin-top: 4em;
 }
 
-.highlight {
-  color: rgb(32, 163, 32);
-}
-
-/* Book rooms 2*/
+/* Book rooms 2 */
 
 .calendar_container_1 {
   margin: 5em 0 0 8em;
-}
-
-.calendar {
-  margin: 2em 0 4em 0;
 }
 
 .room_type {
@@ -272,4 +264,8 @@ option {
 
 .time {
   margin-top: 1.5em;
+}
+
+.available {
+  margin-bottom: 0.5em;
 }

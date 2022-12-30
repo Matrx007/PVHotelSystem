@@ -1,5 +1,5 @@
 import React from "react";
-import LogInNavbar from "./Navbars/LogInNavbar";
+import LogInNavbar from "../Navbars/LogInNavbar";
 
 function LogIn() {
   return (

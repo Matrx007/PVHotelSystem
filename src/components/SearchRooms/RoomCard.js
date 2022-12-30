@@ -12,7 +12,7 @@ function RoomCard({ room }) {
             Ülevaade
           </Link>
           <Link
-            to={`/book-rooms-schedule/${room.name}`}
+            to={`/book-rooms-schedule/${room.id}/${room.name}`}
             className="link_1 link_2"
           >
             Broneeri

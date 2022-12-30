@@ -64,6 +64,7 @@ function generateRandomDatesExcluding(
 async function getRooms() {
   return await [
     {
+      id: "1",
       name: "Ühekohaline",
       available: 4,
       price: 40,
@@ -75,6 +76,7 @@ async function getRooms() {
       bookedDates: generateRandomDates(),
     },
     {
+      id: "2",
       name: "Kahekohaline",
       available: 5,
       price: 75,
@@ -86,6 +88,7 @@ async function getRooms() {
       bookedDates: generateRandomDates(),
     },
     {
+      id: "3",
       name: "Kahe voodiga",
       available: 3,
       price: 80,
@@ -97,6 +100,7 @@ async function getRooms() {
       bookedDates: generateRandomDates(),
     },
     {
+      id: "4",
       name: "Kolmekohaline",
       available: 3,
       price: 100,
@@ -108,6 +112,7 @@ async function getRooms() {
       bookedDates: generateRandomDates(),
     },
     {
+      id: "5",
       name: "Sviit",
       available: 1,
       price: 150,
@@ -263,4 +268,4 @@ async function getRoomsByAvailability(startDate, endDate) {
   ];
 }
 
-export { getRooms, getRoomsSortedBy };
+export { getRooms, getRoomsSortedBy, getRoomsByAvailability };

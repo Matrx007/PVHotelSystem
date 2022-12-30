@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -7,7 +6,7 @@ function Home() {
       <div className="rooms">
         <div className="room_1">
           <Link to="/book-rooms" className="room_link">
-            Broneeri tuba
+            Broneeri tube
           </Link>
         </div>
         <p className="text_2">või</p>
