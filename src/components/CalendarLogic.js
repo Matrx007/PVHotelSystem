@@ -3,14 +3,14 @@ import moment from "moment";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-function CalendarLogic({ rooms, setRooms, date, setDate }) {
+function CalendarLogic({ rooms }) {
   const bookedDatesArray =
     rooms && rooms.bookedDates ? Object.values(rooms.bookedDates) : undefined;
 
   function tilesClassName({ date, view }) {
     if (
       bookedDatesArray &&
-      bookedDatesArray.find((x) => x === moment(date).format("MM/DD/YYYY"))
+      bookedDatesArray.find((x) => x === moment(date).format("M/D/YYYY"))
     ) {
       return "highlighted";
     }
