@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans";
+  font-family: "Poppins";
 }
 
 /* Navbar */
@@ -55,14 +56,24 @@
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  background-color: rgb(5, 82, 170);
+  margin: 5vh 25vh 0 25vh;
+  border-radius: 50px;
+}
+
+.hotel {
+  margin: 10vh 0;
+  height: 600px;
+  width: 625px;
+  border-radius: 10px;
 }
 
 .text_2 {
   padding: 1em 0em;
-  font-size: 18px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
 }
 
 .rooms {
@@ -71,9 +82,22 @@
 
 .room_link {
   text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-size: 35px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  display: inline-block;
+}
+
+.room_link:after {
+  display: block;
+  content: "";
+  border-bottom: 3px solid red;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.room_link:hover:after {
+  transform: scaleX(1);
+  transform-origin: 0% 50%;
 }
 
 /* Sign-up and sign-in */
@@ -157,21 +181,22 @@ input {
   padding: 3em 0 0 5em;
 }
 
+.img_2 {
+  width: 245px;
+  margin-top: 5em;
+}
+
+.room_type_images {
+  display: flex;
+  gap: 30px;
+  margin-top: 4em;
+  position: absolute;
+  left: 80px;
+}
+
 .room_card {
   display: flex;
-  gap: 50px;
-}
-
-.room_description {
-  margin-top: 3em;
-}
-
-.available {
-  margin-top: 1em;
-}
-
-.price {
-  margin-top: 6em;
+  gap: 70px;
 }
 
 .search_elements {
@@ -224,7 +249,7 @@ option {
 .link_1,
 .link_2 {
   font-size: 14px;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
   cursor: pointer;
 }
 
@@ -235,21 +260,19 @@ option {
 
 /* Room Overview */
 
-.price_1 {
-  margin-bottom: 3em;
-}
-
 .btn_1 {
   padding: 1em;
 }
 
 .img_1 {
-  height: 350px;
-  width: 550px;
+  height: 410px;
+  width: 600px;
 }
 
 .calendar_container {
+  display: flex;
   margin-top: 4em;
+  margin-left: 7em;
 }
 
 /* Book rooms 2 */
@@ -264,8 +287,4 @@ option {
 
 .time {
   margin-top: 1.5em;
-}
-
-.available {
-  margin-bottom: 0.5em;
 }

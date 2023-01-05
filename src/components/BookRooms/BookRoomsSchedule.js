@@ -93,6 +93,7 @@ const CalendarContainer = styled.div`
   display: flex;
   gap: 100px;
   margin-top: 2em;
+
   .highlighted {
     color: white;
     background-color: #991ba1;

@@ -9,6 +9,7 @@ import SearchRooms from "./SearchRooms/SearchRooms";
 import RoomOverview from "./RoomOverview/RoomOverview";
 import BookRoomsSchedule from "./BookRooms/BookRoomsSchedule";
 import Details from "./BookRooms/Details";
+import NoMatch from "./BookRooms/NoMatch";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           element={<BookRoomsSchedule />}
         ></Route>
         <Route path="/details" element={<Details />}></Route>
+        <Route path="*" element={<NoMatch />}></Route>
       </Routes>
     </div>
   );

@@ -5,13 +5,11 @@ import RoomCard from "../SearchRooms/RoomCard";
 
 function SearchRooms() {
   const [rooms, setRooms] = useState([]);
-  // const [dates, setDates] = useState([]);
   const [sortDirection, setSortDirection] = useState(true);
   const [sortType, setSortType] = useState("name");
 
   useEffect(() => {
     getRoomsSortedBy(sortType, sortDirection).then((data) => setRooms(data));
-    // getRoomsByAvailability(1, 5).then((data) => console.log(data));
   }, [sortType, sortDirection]);
 
   const handleDirection = () => {

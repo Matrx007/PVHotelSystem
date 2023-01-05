@@ -27,24 +27,42 @@ function RoomOverview() {
     fetchRoom();
   }, []);
 
+  const firstImage =
+    rooms.pictures && rooms.pictures.length > 0 ? rooms.pictures[0] : "";
+
+  const secondImage =
+    rooms.pictures && rooms.pictures.length > 0 ? rooms.pictures[1] : "";
+
+  const thirdImage =
+    rooms.pictures && rooms.pictures.length > 0 ? rooms.pictures[2] : "";
+
   return (
     <div>
       <OtherPagesNavbar />
       <h1>Toa ülevaade</h1>
       <div className="room_card">
         <img src={rooms.pictures} alt="" className="img img_1" />
-        <div className="room_description">
+        <div style={{ marginTop: "4em" }}>
           <h3>{rooms.name}</h3>
-          <p className="available">{rooms.available} saadaval</p>
-          <h3 className="price price_1">{rooms.price} € / öö</h3>
+          <p style={{ marginTop: "1em" }}>{rooms.available} saadaval</p>
+          <h3 style={{ marginTop: "7em", marginBottom: "2.5em" }}>
+            {rooms.price} € / öö
+          </h3>
           <Link
             to={`/book-rooms-schedule/${roomId}/${rooms.name}`}
             className="btn btn_1"
           >
             Broneeri
           </Link>
-          <div className="calendar_container">
-            <h3 className="available">Saadavus</h3>
+          <div className="room_type_images">
+            <img src={firstImage} alt="" className="img_2" />
+            <img src={secondImage} alt="" className="img_2" />
+            <img src={thirdImage} alt="" className="img_2" />
+          </div>
+        </div>
+        <div className="calendar_container">
+          <div>
+            <h3 style={{ marginBottom: "0.5em" }}>Saadavus</h3>
             <CalendarContainer>
               <CalendarLogic rooms={rooms} />
             </CalendarContainer>

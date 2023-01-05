@@ -5,7 +5,7 @@ function RoomCard({ room }) {
   return (
     <div className="room_card">
       <img src={room.pictures} alt="" className="img" />
-      <div className="room_description">
+      <div style={{ marginTop: "3em" }}>
         <div className="room_type_links">
           <h3>{room.name}</h3>
           <Link to={`/room-overview/${room.id}`} className="link_1">
@@ -18,8 +18,8 @@ function RoomCard({ room }) {
             Broneeri
           </Link>
         </div>
-        <p className="available">{room.available} saadaval</p>
-        <h3 className="price">{room.price} € / öö</h3>
+        <p style={{ marginTop: "1em" }}>{room.available} saadaval</p>
+        <h3 style={{ marginTop: "6em" }}>{room.price} € / öö</h3>
       </div>
     </div>
   );
