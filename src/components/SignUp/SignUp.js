@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SignUpNavbar from "../Navbars/SignUpNavbar";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import AuthPicture from "../LogIn/AuthPicture.png";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,6 @@ function SignUp() {
     setError("");
     try {
       await createUser(email, password);
-      console.log(email, password);
       navigate("/enter");
     } catch {
       setError(e.message);
@@ -31,35 +31,32 @@ function SignUp() {
     <div>
       <SignUpNavbar />
       <div className="contact_bg">
-        <h1>Registreeru</h1>
         <form onSubmit={handleSubmit}>
-          <div className="grid_for_contact">
-            <div className="inputs">
-              <label>
-                Kasutajatunnus
-                <div>
-                  <input
-                    type="text"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-              </label>
+          <div className="grid-for-contact">
+            <h2 style={{ marginTop: "2em", marginBottom: "3em" }}>
+              Loo endale sobiv konto
+            </h2>
+            <div>
+              <input
+                type="text"
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Kasutajatunnus"
+              />
             </div>
             <div className="password">
-              <label>
-                Parool
-                <div>
-                  <input
-                    type="password"
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
-                  />
-                </div>
-              </label>
+              <div>
+                <input
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Parool"
+                />
+              </div>
+              <button className="btn" type="submit">
+                Registreeru
+              </button>
             </div>
-            <button className="btn register">Registreeru</button>
           </div>
+          <img src={AuthPicture} alt="" className="auth_picture" />
         </form>
       </div>
     </div>

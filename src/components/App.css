@@ -115,15 +115,16 @@ h1 {
 input {
   outline: none;
   height: 45px;
-  width: 170px;
+  width: 100%;
   border: none;
-  border-bottom: 1px solid black;
-  font-size: 16px;
+  border-bottom: 1px solid rgb(167, 167, 167);
+  font-size: 15px;
+  padding-bottom: 0.5em;
+  color: rgb(56, 56, 56);
 }
 
-label {
-  color: rgb(117, 117, 117);
-  font-size: 14px;
+::placeholder {
+  color: rgb(56, 56, 56);
 }
 
 .log_out_btn {
@@ -136,7 +137,7 @@ label {
   font-size: 17px;
   cursor: pointer;
   border-radius: 10px;
-  background-color: rgb(83, 121, 179);
+  background-color: rgb(219, 150, 0);
   color: white;
 }
 
@@ -149,7 +150,7 @@ label {
 }
 
 .log_out_btn:hover {
-  background-color: rgb(72, 103, 148);
+  background-color: rgb(190, 134, 13);
   transition: 0.5s ease;
 }
 
@@ -158,17 +159,18 @@ label {
 }
 
 .btn {
-  margin-top: 7em;
+  margin-top: 8em;
   margin-bottom: 2em;
-  padding: 1em 2em;
+  padding: 1em;
   border: none;
-  font-size: 17px;
+  font-size: 16px;
   color: black;
   background-color: white;
   border: 2px solid rgb(14, 82, 183);
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
+  width: 100%;
 }
 
 .btn:hover {
@@ -181,26 +183,28 @@ label {
   margin-top: 5em;
 }
 
-.btn_2 {
-  padding: 1em 2em 1em 2em;
-}
-
-.register {
-  padding: 1em;
-}
-
 .contact_bg {
+  display: flex;
+  justify-content: center;
+  padding-top: 8em;
   background-color: rgb(241, 241, 241);
   height: 100vh;
 }
 
-.grid_for_contact {
+form {
+  display: flex;
+  justify-content: space-around;
   background-color: white;
-  width: 700px;
-  height: 530px;
-  margin: 4em auto;
+  width: 800px;
+  height: 550px;
   box-shadow: 0px 0px 3px 3px rgb(202, 201, 201);
-  padding: 6em 0 0 6em;
+  border-radius: 10px;
+}
+
+.auth_picture {
+  height: 365px;
+  width: 300px;
+  margin-top: 6.5em;
   border-radius: 10px;
 }
 
@@ -220,6 +224,11 @@ label {
   border: none;
   font-size: 16px;
   cursor: pointer;
+}
+
+.btn_1 {
+  padding: 1em 2em;
+  width: 120px;
 }
 
 /* Search rooms */
@@ -307,10 +316,6 @@ option {
 }
 
 /* Room Overview */
-
-.btn_1 {
-  padding: 1em;
-}
 
 .img_1 {
   height: 410px;

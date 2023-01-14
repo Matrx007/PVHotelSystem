@@ -42,7 +42,7 @@ function BookRooms() {
         <div className="btn_container">
           <Link
             to={`/book-rooms-schedule/${roomId}/${roomValue}`}
-            className="btn"
+            className="btn btn_1"
           >
             Edasi
           </Link>

@@ -79,7 +79,7 @@ function BookRoomsSchedule() {
             />
           </div>
         </CalendarContainer>
-        <button className="btn" onClick={handleClick}>
+        <button className="btn btn_1" onClick={handleClick}>
           Edasi
         </button>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LogInNavbar from "../Navbars/LogInNavbar";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import AuthPicture from "../LogIn/AuthPicture.png";
 
 function LogIn() {
   const { signIn } = UserAuth();
@@ -26,30 +27,32 @@ function LogIn() {
     <div>
       <LogInNavbar />
       <div className="contact_bg">
-        <h1>Sisene</h1>
         <form onSubmit={handleSubmit}>
-          <div className="grid_for_contact">
-            <label>
-              Kasutajatunnus
-              <div>
-                <input type="text" onChange={(e) => setEmail(e.target.value)} />
-              </div>
-            </label>
-            <div className="password">
-              <label>
-                Parool
-                <div>
-                  <input
-                    type="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-              </label>
+          <div className="grid-for-contact">
+            <h2 style={{ marginTop: "2em", marginBottom: "3em" }}>
+              Sisesta oma konto andmed
+            </h2>
+            <div>
+              <input
+                type="text"
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Kasutajatunnus"
+              />
             </div>
-            <button className="btn btn_2" type="submit">
-              Sisene
-            </button>
+            <div className="password">
+              <div>
+                <input
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Parool"
+                />
+              </div>
+              <button className="btn" type="submit">
+                Sisene
+              </button>
+            </div>
           </div>
+          <img src={AuthPicture} alt="" className="auth_picture" />
         </form>
       </div>
     </div>

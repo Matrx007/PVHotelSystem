@@ -8,7 +8,7 @@ function NoMatch() {
         Vali toa tüüp enne "Edasi" nupu vajutamist
       </h2>
       <div className="btn_container">
-        <Link to="book-rooms" className="btn">
+        <Link to="book-rooms" className="btn btn_1">
           Tagasi
         </Link>
       </div>

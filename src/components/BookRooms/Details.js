@@ -31,7 +31,7 @@ function Details() {
         {param3}
         <h3 className="room_type time">Ajavahemik</h3>
         <div>{`Valitud vahemikus ${startDateString} kuni ${endDateString}`}</div>
-        <button className="btn">Kinnita</button>
+        <button className="btn btn_1">Kinnita</button>
       </div>
     </div>
   );
