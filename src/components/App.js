@@ -10,13 +10,22 @@ import RoomOverview from "./RoomOverview/RoomOverview";
 import BookRoomsSchedule from "./BookRooms/BookRoomsSchedule";
 import Details from "./BookRooms/Details";
 import NoMatch from "./BookRooms/NoMatch";
+import { AuthContextProvider } from "./context/AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
-    <div>
+    <AuthContextProvider>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />}></Route>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          ></Route>
         </Route>
         <Route path="/register" element={<SignUp />}></Route>
         <Route path="/enter" element={<LogIn />}></Route>
@@ -30,7 +39,7 @@ function App() {
         <Route path="/details" element={<Details />}></Route>
         <Route path="*" element={<NoMatch />}></Route>
       </Routes>
-    </div>
+    </AuthContextProvider>
   );
 }
 

@@ -1,38 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import SignUpNavbar from "../Navbars/SignUpNavbar";
+import { UserAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { createUser } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await createUser(email, password);
+      console.log(email, password);
+      navigate("/enter");
+    } catch {
+      setError(e.message);
+      if (password.length < 6) {
+        alert(
+          "Sinu salasõna peab koosnema vähemalt 6-st tähemärgist või numbrist"
+        );
+      }
+    }
+  };
+
   return (
     <div>
       <SignUpNavbar />
-      <h1>Registreeru</h1>
-      <form action="#">
-        <div className="inputs">
-          <label>
-            Kasutajatunnus
-            <div>
-              <input type="text" />
+      <div className="contact_bg">
+        <h1>Registreeru</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="grid_for_contact">
+            <div className="inputs">
+              <label>
+                Kasutajatunnus
+                <div>
+                  <input
+                    type="text"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              </label>
             </div>
-          </label>
-          <label>
-            Täisnimi
-            <div>
-              <input type="text" />
+            <div className="password">
+              <label>
+                Parool
+                <div>
+                  <input
+                    type="password"
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+                </div>
+              </label>
             </div>
-          </label>
-        </div>
-        <div className="password">
-          <label>
-            Parool
-            <div>
-              <input type="password" />
-            </div>
-          </label>
-        </div>
-        <button className="btn register" type="submit">
-          Registreeru
-        </button>
-      </form>
+            <button className="btn register">Registreeru</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

@@ -66,11 +66,11 @@ function BookRoomsSchedule() {
         )}
         <CalendarContainer>
           <div>
-            <h3 className="available">Saadavus</h3>
+            <h3 style={{ marginBottom: "0.5em" }}>Saadavus</h3>
             <CalendarLogic rooms={rooms} />
           </div>
           <div>
-            <h3 className="available">Vali sobiv vahemik</h3>
+            <h3 style={{ marginBottom: "0.5em" }}>Vali sobiv vahemik</h3>
             <Calendar
               value={date}
               onChange={setDate}
