@@ -33,7 +33,7 @@ CREATE TABLE `appointments` (
   KEY `user` (`user`),
   CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`room`) REFERENCES `rooms` (`id`),
   CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`user`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,41 +43,10 @@ CREATE TABLE `appointments` (
 LOCK TABLES `appointments` WRITE;
 /*!40000 ALTER TABLE `appointments` DISABLE KEYS */;
 INSERT INTO `appointments` VALUES
-(1,1,1,'2023-02-13','2023-02-15'),
-(2,1,1,'2023-02-16','2023-02-17'),
-(3,1,1,'2023-02-08','2023-02-09'),
-(4,1,1,'2023-02-10','2023-02-12');
+(18,1,1,'2023-02-16','2023-02-23'),
+(19,1,1,'2023-01-31','2023-02-03'),
+(20,1,1,'2023-02-07','2023-02-10');
 /*!40000 ALTER TABLE `appointments` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `reviews`
---
-
-DROP TABLE IF EXISTS `reviews`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `reviews` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `room` int(11) NOT NULL,
-  `user` int(11) NOT NULL,
-  `description` tinytext DEFAULT NULL,
-  `rating` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `room` (`room`),
-  KEY `user` (`user`),
-  CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`room`) REFERENCES `rooms` (`id`),
-  CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`user`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `reviews`
---
-
-LOCK TABLES `reviews` WRITE;
-/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -105,7 +74,7 @@ CREATE TABLE `rooms` (
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
 INSERT INTO `rooms` VALUES
-(1,'Ãœhekohaline',40,'VÃ¤ike hubane ruum Ã¼hele.','[\"https://images.trvl-media.com/lodging/75000000/74250000/74242600/74242531/9b2b2d66.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5a476c74.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/9c4ce050.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\"]',4),
+(1,'Ãœhekohaline',40,'VÃ¤ike hubane ruum Ã¼hele.','[\"https://images.trvl-media.com/lodging/75000000/74250000/74242600/74242531/9b2b2d66.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\", \"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/5a476c74.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\"]',4),
 (2,'Kahekohaline',75,'Kahene tube paarile.','[\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/1436d39c.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/bf3c0cbc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/79035584.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\"]',4),
 (3,'Kahe voodiga',80,'Kahene tube kahele.','[\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/83c80c39.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/917201ab.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/c43c9335.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\"]',2),
 (4,'Kolmekohaline',100,'Ãœhe kahekohalise ja Ã¼he Ã¼hekohalise voodiga.','[\"https://images.trvl-media.com/lodging/75000000/74250000/74242600/74242531/1331f409.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/42361b97.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\",\"https://images.trvl-media.com/hotels/75000000/74250000/74242600/74242531/11995beb.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium\"]',5),
@@ -135,7 +104,8 @@ CREATE TABLE `session_tokens` (
 LOCK TABLES `session_tokens` WRITE;
 /*!40000 ALTER TABLE `session_tokens` DISABLE KEYS */;
 INSERT INTO `session_tokens` VALUES
-(1,'7e55e04b0aeceb3c5b6ce38bbface9b363e78510');
+(1,'d705dce43b9b31e364bc020fcb42d69f63f3d442'),
+(2,'2bda4110335756d357f7898e7ee1fb2d63f3d45c');
 /*!40000 ALTER TABLE `session_tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +125,7 @@ CREATE TABLE `users` (
   `type` enum('customer','admin') DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usrname_unique` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +135,8 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
-(1,'rainis','uCêÈë$˜´+Ldøâ}×.','Rainis','Randmaa','customer');
+(1,'client',0xA116FC579B4BAFEC8E140A802DE41B0C,'John','Doe','customer'),
+(2,'admin',0xF9BFECAE58D5C72E95224E9CC2B44146,'Kuri','Admin','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -178,4 +149,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-18 19:24:20
+-- Dump completed on 2023-02-20 22:51:27
