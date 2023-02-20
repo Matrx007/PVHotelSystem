@@ -1,19 +1,36 @@
-# Before starting ..
- .. the frontend must be built from source.
+# About
 
+Online hotel booking system made for ASI Karikas 2023 (Feb.) competition.
+
+Back-end: flask, Python (Rainis Randmaa)
+
+Front-end: React (Andrus Vaher)
+
+# Cloning & running
+
+## Cloning submodules
 ```sh
-cd frontend
-npm i
-npm run build
+git submodule init
+git submodule update
 ```
 
-# Start the server ..
- .. using `python3 src/server.py`
+## Setting up database
+
+Default configuration (can be changed in src/db.py):
+
+- Database must be running at localhost
+- Database must have user called 'root'
+
+Database tables and example data can be loaded from 'dump.sql' file
+
+Dump includes two accounts with username 'client' and 'admin', both of which have password 'abc'
+
+Database 'root' user password must be stored in the project root folder in 'db_password.txt' file, without any other characters (new lines or whitespaces at the end or beginning)
 
 
-# Dependencies
+## Dependencies
 
-## MariaDB Connector/C
+### MariaDB Connector/C
 Required for Python dependency 'mariadb'
 
 ```
@@ -39,7 +56,19 @@ sudo ./mariadb_repo_setup \
    --mariadb-server-version="mariadb-10.8.6"
 ```
 
-## Python dependencies
+### Python dependencies
 - flask
 - flask_cors
+- flask_sqlalchemy
 - mariadb
+
+## Building React front-end
+
+```sh
+cd frontend
+npm i
+npm run build
+```
+
+## Start the server ..
+ .. using `python3 src/server.py`

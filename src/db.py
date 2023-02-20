@@ -1,6 +1,8 @@
 # Module Imports
 import mariadb
 import sys
+import json
+
 from flask_sqlalchemy import SQLAlchemy
 from flask import g, app, Flask
 
@@ -9,7 +11,7 @@ with open('./db_password.txt','r') as file:
     password = file.read()
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:'+password+'@localhost/hotel'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:'+password+'@localhost/hotel?autocommit=true'
 app.config['SQLALCHEMY_POOL_RECYCLE'] = 3600
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -56,6 +58,7 @@ def createUser(username, password, firstname, lastname, userType = "customer"):
         [username, username, password, firstname, lastname, userType]
     )
     conn.commit()
+    cur.close()
 
     return True
 
@@ -78,7 +81,6 @@ def loginUser(username, password):
 
 @guard
 def getUser(sessionToken):
-    print(1)
     conn = get_db()
     cur = conn.connection.cursor(dictionary=True)
     
@@ -92,7 +94,6 @@ def getUser(sessionToken):
         """,
         [sessionToken]
     );
-    print(2)
     
     return cur.fetchone()
 
@@ -313,6 +314,62 @@ def getMyAppointments(userID):
     return cur.fetchall()
 
 @guard
+def checkAppointments(room, startDate, endDate):
+    conn = get_db()
+    cur = conn.connection.cursor(dictionary=True)
+    
+    cur.execute("""
+        SELECT
+            COUNT(*) AS overlap
+        FROM
+            appointments
+        WHERE
+            appointments.room = %s AND
+            STR_TO_DATE(%s, '%Y-%m-%d') <= appointments.end AND
+            STR_TO_DATE(%s, '%Y-%m-%d') >= appointments.start 
+    """, [room, startDate, endDate])
+    
+    return cur.fetchone()['overlap'] == 0
+
+@guard
+def makeAppointment(user, room, startDate, endDate):
+    conn = get_db()
+    cur = conn.connection.cursor(dictionary=True)
+    
+    cur.execute("""
+        INSERT INTO appointments (room, start, end, user)
+        VALUES (
+            %s,
+            STR_TO_DATE(%s, '%Y-%m-%d'),
+            STR_TO_DATE(%s, '%Y-%m-%d'),
+            %s
+        );
+    """, [room, startDate, endDate, user])
+    
+    conn.commit()
+    cur.close()
+
+    return True
+
+@guard
+def updateRoom(roomId, name, price, count, description, pictures):
+    conn = get_db()
+    cur = conn.connection.cursor(dictionary=True)
+
+    print(name, price, count, description, pictures);
+    
+    cur.execute("""
+        UPDATE rooms
+        SET name=%s, price=%s, count=%s, description=%s, pictures=%s
+        WHERE id=%s;
+    """, [name, price, count, description, json.dumps(pictures), roomId])
+    
+    conn.commit()
+    cur.close()
+
+    return True
+
+@guard
 def getSessionToken(username):
     conn = get_db()
     cur = conn.connection.cursor(dictionary=True)
@@ -355,6 +412,7 @@ def getSessionToken(username):
             [username]
         );
         conn.commit()
+        cur.close()
     
         sessionToken = cur.fetchone()
 
